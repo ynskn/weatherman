@@ -50,8 +50,6 @@ class PerkyPig extends React.Component {
       });
     }
 
-
-
   /* Deleted for Error Handling
 
     Deleted for Error Handling */
@@ -59,20 +57,34 @@ class PerkyPig extends React.Component {
   render() {
     return (
       <div>
-        <Titles/>
-        <Form getWeather={this.getWeather}/>
-
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          error={this.state.error}
-        />
+        <div className='wrapper'>
+          <div className='main'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-xs-5 title-container'>
+                  <Titles />
+                </div>
+                <div className='col-xs-7 form-container'>
+                  <Form getWeather={this.getWeather} />
+                  <Weather
+                    temperature={this.state.temperature}
+                    city={this.state.city}
+                    country={this.state.country}
+                    humidity={this.state.humidity}
+                    description={this.state.description}
+                    error={this.state.error}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    );
-  }
-};
+
+
+          );
+        }
+    };
+
 
 export default PerkyPig;
